@@ -31,12 +31,12 @@ data = data[data['gender'] == 'F']
 gb = data.groupby('name')
 agged = gb.agg({'count':np.sum ,'year': np.mean}).sort('count', ascending=False)
 
-print "Most 10 popular names over the last 132 years:"
+print "Ten most popular names over the last 132 years:"
 print agged.ix[:10]
 
 print ''
 
-print "'Least' 10 popular names over the last 132 years:"
+print "Ten least popular names over the last 132 years:"
 print agged.ix[-10:]
 
 p.semilogy(agged['count'])
